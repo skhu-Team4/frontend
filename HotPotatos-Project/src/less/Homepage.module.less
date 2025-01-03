@@ -1,0 +1,172 @@
+html,
+body {
+  margin: 0;
+  height: 100%; /* 화면 전체 높이를 100%로 설정 */
+  width: 100%; /* 화면 전체 너비를 100%로 설정 */
+}
+
+.container {
+  width: 100vw;
+  height: 100vh; /* 화면 높이 100% */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f7efe1;
+
+  .header {
+    width: 100%;
+    height: 14%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f7efe1;
+
+    font-weight: bolder;
+    font-size: 32px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+  }
+
+  .body {
+    width: 100%;
+    height: 86%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 85px;
+
+    div {
+      width: 350px;
+      height: 84%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-color: #fcc263;
+      border-radius: 50px;
+      position: relative;
+
+      .sentence {
+        width: 88%;
+        height: 34%;
+        background-color: white;
+        border-radius: 50px;
+        margin-top: 30px;
+        opacity: 0.8;
+      }
+
+      img {
+        width: 88%;
+        height: 50%;
+        border-radius: 50px;
+      }
+
+      p {
+        text-align: center;
+        font-size: 22px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bolder;
+        margin-top: 0;
+      }
+
+      .button {
+        width: 70px;
+        height: 70px;
+        color: #f57c00;
+        opacity: 1;
+      }
+    }
+
+    .profile {
+      border-radius: 50px;
+      height: 80%;
+      width: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-color: #fcc263;
+
+      .profileHead {
+        width: 40%;
+        height: 30%;
+        border-radius: 80px;
+        background-color: white;
+      }
+
+      .profileBody {
+        width: 80%;
+        height: 25%;
+        border-radius: 20px;
+        background-color: white;
+        margin-top: 20px;
+        display: flex;
+        text-align: left;
+        align-items: center;
+        flex-direction: column;
+
+        .introduce {
+          width: auto;
+          height: 30px;
+          background-color: white;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .sentence {
+          margin-top: 10px;
+          width: 90%;
+          height: 70px;
+          background-color: white;
+        }
+      }
+
+      .profileFooter {
+        width: 80%;
+        height: 30%;
+        border-radius: 20px;
+        background-color: #fcc263;
+        margin-top: 20px;
+        row-gap: 10px;
+
+        div {
+          width: 100%;
+          height: 33%;
+          background-color: #f57c00;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+.expandableBox {
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* 확대 및 그림자 효과 */
+  cursor: pointer; /* 커서 모양 변경 */
+
+  &:hover {
+    transform: scale(1.1); /* 박스 확대 */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* 그림자 추가 */
+  }
+
+  /* 물결 효과 */
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(0, 0, 0, 0.1); /* 물결 색상 */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease, opacity 0.6s ease;
+    z-index: -1; /* 배경 효과 */
+  }
+
+  &:hover::after {
+    width: 200%; /* 물결 확대 */
+    height: 200%;
+    opacity: 0; /* 점점 사라지도록 */
+  }
+}

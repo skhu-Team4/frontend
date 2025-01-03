@@ -1,0 +1,184 @@
+html,
+body {
+  margin: 0;
+  height: 100%; /* 화면 전체 높이를 100%로 설정 */
+  width: 100%; /* 화면 전체 너비를 100%로 설정 */
+  overflow: hidden; /* 화면을 넘는 요소를 숨깁니다. */
+}
+
+.container {
+  position: absolute;
+  top: 0; /* 화면 상단에 배치 */
+  right: 0; /* 화면 우측에 배치 */
+  color: white; /* 텍스트 색상 */
+  text-align: right; /* 텍스트 오른쪽 정렬 */
+  z-index: 1; /* 배경보다 위에 표시 */
+  width: 100%;
+  height: 100%;
+  background-color: #fcc263;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 40px;
+
+  .chatMake {
+    width: 400px;
+    height: 500px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #3d3d3d;
+  }
+
+  .chatWindow {
+    margin-right: 20px;
+    width: 600px;
+    height: 700px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 10px;
+
+    .header {
+      width: 95%;
+      height: 8%;
+      background-color: #f7f7f7;
+      border: 1px solid #ececec;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 10px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #3d3d3d;
+
+      .closeButton {
+        background: none;
+        border: none;
+        font-size: 20px;
+        font-weight: bold;
+        color: #3d3d3d;
+        cursor: pointer;
+      }
+    }
+
+    .body {
+      width: 95%;
+      height: 70%;
+      background-color: #f7f7f7;
+      border: 1px solid #ececec;
+      border-radius: 5px;
+      padding: 10px;
+      overflow-y: auto;
+
+      .message {
+        display: flex;
+        max-width: 100%;
+        margin-bottom: 10px;
+
+        &.sent {
+          justify-content: flex-end;
+
+          div {
+            background-color: #ffe4b5; /* 기본 메시지 색상 */
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 14px;
+            color: #3d3d3d;
+            word-wrap: break-word;
+          }
+
+          .timestamp {
+            margin-top: 5px;
+            font-size: 10px;
+            color: #757575;
+            background-color: #f7f7f7;
+          }
+        }
+
+        &.received {
+          justify-content: flex-start;
+
+          div {
+            margin-left: 10px;
+            margin-top: 10px;
+            background-color: #3d3d3d;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 14px;
+            word-wrap: break-word;
+          }
+          .timestamp {
+            margin-top: 5px;
+            font-size: 10px;
+            color: #757575;
+            background-color: #f7f7f7;
+          }
+        }
+
+        div {
+          background-color: #ffe4b5; /* 기본 메시지 색상 */
+          padding: 10px;
+          border-radius: 10px;
+          font-size: 14px;
+          color: #3d3d3d;
+          word-wrap: break-word;
+
+          &.sent {
+            background-color: #ffe4b5;
+          }
+
+          &.received {
+            background-color: #f9f9f9;
+            border: 1px solid #ececec;
+          }
+        }
+      }
+    }
+
+    .footer {
+      width: 95%;
+      height: 10%;
+
+      border: 1px solid white;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      padding: 10px;
+
+      .inputField {
+        flex: 1;
+        padding: 10px;
+        border-radius: 20px;
+        border: 1px solid #ececec;
+        outline: none;
+        font-size: 14px;
+        margin-right: 10px;
+      }
+
+      .sendButton {
+        background-color: #fcc263;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}

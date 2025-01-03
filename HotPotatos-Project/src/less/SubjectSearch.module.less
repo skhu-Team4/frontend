@@ -1,0 +1,170 @@
+html,
+body {
+  height: 100%; /* 화면 전체 높이를 100%로 설정 */
+  width: 100%; /* 화면 전체 너비를 100%로 설정 */
+  overflow: hidden; /* 화면을 넘는 요소를 숨깁니다. */
+  background-color: #fcc263;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 600px;
+  height: 700px;
+
+  .header {
+    width: 100%;
+    height: 15%;
+
+    img {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  .body {
+    width: 100%;
+    height: 85%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .search {
+      width: 85%;
+      height: 40%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      .subSearch {
+        width: 100%;
+        height: 20%;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        margin-bottom: 20px;
+        input {
+          width: 80%;
+          height: 50px;
+          margin: 10px;
+          text-align: center;
+          font-size: 18px;
+          border: #f7f7f7;
+          background-color: #f7f7f7;
+          border-radius: 10px; /* 부드러운 모서리 */
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* 그림자 효과 */
+        }
+
+        .icon {
+          width: 10%;
+          height: 50px;
+          border: #f7f7f7;
+          background-color: #f7f7f7;
+          border-radius: 10px; /* 부드러운 모서리 */
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* 그림자 효과 */
+          margin: 10px;
+          &:hover {
+            transform: scale(1.1); /* 버튼 호버 확대 효과 */
+          }
+
+          .icons {
+            width: 40px;
+            height: 40px;
+            padding: 5px;
+          }
+        }
+      }
+    }
+
+    .result {
+      width: 95%;
+      height: 10%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      margin-bottom: 20px;
+
+      .sentence {
+        width: 70%;
+        height: 50px;
+        margin: 10px;
+        text-align: center;
+        font-size: 18px;
+        border: #f7f7f7;
+        background-color: #f7f7f7;
+        border-radius: 10px; /* 부드러운 모서리 */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* 그림자 효과 */
+      }
+
+      .icon {
+        width: 9%;
+        height: 50px;
+        border: #f7f7f7;
+        background-color: #f7f7f7;
+        border-radius: 10px; /* 부드러운 모서리 */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* 그림자 효과 */
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: gray;
+        &:hover {
+          transform: scale(1.1); /* 버튼 호버 확대 효과 */
+        }
+        .icons {
+          width: 30px;
+          height: 30px;
+          padding: 5px;
+          color: white;
+        }
+      }
+    }
+
+    .list {
+      width: 81%;
+      height: 45%;
+
+      background-color: #f7f7f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      border-radius: 10px; /* 부드러운 모서리 */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* 그림자 효과 */
+      margin-bottom: 20px;
+
+      .listBody {
+        width: 95%;
+        height: 70%;
+        background-color: red;
+        margin-bottom: 10px;
+        overflow-y: auto; /* 세로 스크롤 활성화 */
+      }
+
+      .listFoot {
+        width: 95%;
+        height: 15%;
+        background-color: blue;
+      }
+    }
+  }
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid transparent; /* 필요 시 테두리 색 변경 */
+}
+
+/* placeholder 텍스트 숨기기 */
+input:focus::placeholder {
+  opacity: 0; /* 포커스 시 placeholder 숨기기 */
+}
